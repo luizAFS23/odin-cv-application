@@ -15,7 +15,6 @@ function Header(){
   )
 }
 
-function 
 
 function App() {
   return (
