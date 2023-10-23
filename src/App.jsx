@@ -10,13 +10,13 @@ import PasswordTaker from './components/PasswordTaker'
 function GeneralInformationForm(){
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const [isEntered, setIsEntered] = useState(false);
+  const [isEmailEntered, setIsEmailEntered] = useState(false);
 
   if (email == null) {
     return <EmailTaker onSubmit={submitEmailHandler} />
   }
 
-  if (password == null) {
+  if (isEmailEntered == true) {
     return <PasswordTaker onSubmit={submitPasswordHandler} />
   }
 
@@ -24,9 +24,9 @@ function GeneralInformationForm(){
     setEmail(e.currentTarget.email.value)
   }
 
-  function isInformationEntered(email, password){
-    if(email != null && password != null){
-      setIsEntered(true);
+  function EmailEntered(email){
+    if(email != null){
+      setIsEmailEntered(true);
     }
   }
 
@@ -37,7 +37,6 @@ function GeneralInformationForm(){
 }
 
 function App() {
-  const [isEntered, setIsEntered] = useState(false);
 
   return (
     <>
