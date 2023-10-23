@@ -25,7 +25,7 @@ const generalinformationvalues = {
 function GeneralInformationForm(){
   const [information, setInformation] = useState(generalinformationvalues);
 
-  const generalInformationSubmit = (e) =>{
+  const handleInputChange = (e) =>{
     const { name, value } = e.target;
     setValues({
       ...information,
@@ -38,18 +38,18 @@ function GeneralInformationForm(){
       <h1>Congratulations, you've just stepped foot into an awesome way of getting a job!</h1>
       <h2>First of all, please put on some general information (it will take a few seconds):</h2>
       
-      <form action="post" onSubmit={generalInformationSubmit}>
+      <form action="post">
         <label htmlFor="name">Enter your name:</label>
         <input type="text" name='name' placeholder='Your name here'/><br/>
 
         <label htmlFor="email">Enter an email:</label>
-        <input type="email" name='email' placeholder='Your email here'/><br/>
+        <input type="email" onChange={handleInputChange} name='email' placeholder='Your email here'/><br/>
 
         <label htmlFor="phone">Enter your phone number:</label>
-        <input type="text" name='phone' placeholder='Your phone number here'/><br/>
+        <input type="text" onChange={handleInputChange} name='phone' placeholder='Your phone number here'/><br/>
 
         <label htmlFor="password">Enter a new password:</label>
-        <input type="password" name='password' placeholder='Your new password here'/><br/>
+        <input type="password" onChange={handleInputChange} name='password' placeholder='Your new password here'/><br/>
 
         <button type='submit'>Submit Information</button>
       </form>
