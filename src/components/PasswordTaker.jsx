@@ -1,11 +1,11 @@
-export default function NameTaker(props) {
+export default function PasswordTaker(props) {
     return(
       <div>
-        <p>Please enter your name.</p>
+        <p>Please enter your password.</p>
         <form onSubmit={props.onSubmit}>
           <label>
-            Name:
-            <input type='text' name='name' />
+            Password:
+            <input type='password' name='password' />
           </label>
           <button type='submit'>Submit</button>
         </form>

@@ -12,15 +12,24 @@ const generalinformationvalues = {
 }
 
 function GeneralInformationForm(){
-  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
 
-  if (name == null) {
-    return <NameTaker onSubmit={submitHandler} />
+  if (email == null) {
+    return <NameTaker onSubmit={submitEmailHandler} />
+  }
+  if (password == null) {
+    return <PasswordTaker onSubmit={submitHandler} />
   }
 
-  function submitHandler(e) {
-    setName(e.value)
+  function submitEmailHandler(e) {
+    setName(e.currentTarget.email.value)
   }
+
+  function submitPasswordHandler(e) {
+    setName(e.currentTarget.password.value)
+  }
+
   
   return(
     <>
