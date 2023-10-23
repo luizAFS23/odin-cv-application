@@ -22,9 +22,9 @@ function Main(){
       <h2>First of all, please put on your information here (it will take a few seconds):</h2>
       <form action="">
         <label htmlFor="name">Name:</label>
-        <input type="text" name='name' placeholder='Your name here'/>
-        <label htmlFor="">Age:</label>
-        
+        <input type="text" name='name' placeholder='Your name here'/><br/>
+        <label htmlFor="age">Age:</label>
+        <input type="number" name='age'/><br/>
         <button type='submit'>Submit Information</button>
       </form>
     </>
