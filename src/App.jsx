@@ -15,11 +15,20 @@ function Header(){
   )
 }
 
-const generalInformationSubmit = () =>{
-
+const generalinformationvalues = {
+  name: "",
+  phone: "",
+  password: "",
+  email: ""
 }
 
 function GeneralInformation(){
+  const [information, setInformation] = useState(generalinformationvalues);
+
+  const generalInformationSubmit = (e) =>{
+    setInformation()
+  }
+  
   return(
     <>
       <h1>Congratulations, you've just stepped foot into an awesome way of getting a job!</h1>
