@@ -8,32 +8,38 @@ import PasswordTaker from './components/PasswordTaker'
 
 
 function GeneralInformationForm(){
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState(null);
   const [isEmailEntered, setIsEmailEntered] = useState(false);
 
-  if (email == null) {
+  if (email.length == 0) {
     return <EmailTaker onSubmit={submitEmailHandler} />
   }
 
-  if (isEmailEntered == true) {
-    return <PasswordTaker onSubmit={submitPasswordHandler} />
+  function EmailEntered(email){
+    if(email.length > 0){
+      setIsEmailEntered(true);
+    }
   }
+
 
   function submitEmailHandler(e) {
     setEmail(e.currentTarget.email.value)
-  }
-
-  function EmailEntered(email){
-    if(email != null){
-      setIsEmailEntered(true);
-    }
   }
 
   function submitPasswordHandler(e) {
     setPassword(e.currentTarget.password.value)
   }
 
+  return(
+    <>
+      {isEmailEntered ? (
+        <PasswordTaker onSubmit={submitPasswordHandler} />
+      ) : (
+        <EmailTaker onSubmit={submitEmailHandler} />
+      )}
+    </>
+  )
 }
 
 function App() {
