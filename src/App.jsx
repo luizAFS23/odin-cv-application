@@ -2,18 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
-function Header(){
-  return(
-    <div className='header'>
-      <h2 className='footer-logo'>CV Application</h2>
-      <div className='links'>
-        <a href="">About me</a>
-        <a href="">More</a>
-      </div>
-    </div>
-  )
-}
+import { Header } from './components/Header'
 
 const generalinformationvalues = {
   name: "",
@@ -23,14 +12,14 @@ const generalinformationvalues = {
 }
 
 function GeneralInformationForm(){
-  const [information, setInformation] = useState(generalinformationvalues);
+  const [name, setName] = useState(null);
 
-  const handleInputChange = (e) =>{
-    const { name, value } = e.target;
-    setValues({
-      ...information,
-      [name]: value,
-    });
+  if (name == null) {
+    return <NameTaker onSubmit={submitHandler} />
+  }
+
+  function submitHandler(e) {
+    setName(e.value)
   }
   
   return(
