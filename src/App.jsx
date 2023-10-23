@@ -22,11 +22,15 @@ const generalinformationvalues = {
   email: ""
 }
 
-function GeneralInformation(){
+function GeneralInformationForm(){
   const [information, setInformation] = useState(generalinformationvalues);
 
   const generalInformationSubmit = (e) =>{
-    setInformation()
+    const { name, value } = e.target;
+    setValues({
+      ...information,
+      [name]: value,
+    });
   }
   
   return(
@@ -41,6 +45,9 @@ function GeneralInformation(){
         <label htmlFor="email">Enter an email:</label>
         <input type="email" name='email' placeholder='Your email here'/><br/>
 
+        <label htmlFor="phone">Enter your phone number:</label>
+        <input type="text" name='phone' placeholder='Your phone number here'/><br/>
+
         <label htmlFor="password">Enter a new password:</label>
         <input type="password" name='password' placeholder='Your new password here'/><br/>
 
@@ -54,7 +61,7 @@ function App() {
   return (
     <>
       <Header/>
-      <GeneralInformation/>
+      <GeneralInformationForm/>
     </>
   )
 }
