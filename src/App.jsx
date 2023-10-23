@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { Header } from './components/Header'
+import { EmailTaker } from './components/EmailTaker'
+import { PasswordTaker } from './components/PasswordTaker'
 
 const generalinformationvalues = {
   name: "",
@@ -16,18 +18,18 @@ function GeneralInformationForm(){
   const [password, setPassword] = useState(null);
 
   if (email == null) {
-    return <NameTaker onSubmit={submitEmailHandler} />
+    return <EmailTaker onSubmit={submitEmailHandler} />
   }
   if (password == null) {
-    return <PasswordTaker onSubmit={submitHandler} />
+    return <PasswordTaker onSubmit={submitPasswordHandler} />
   }
 
   function submitEmailHandler(e) {
-    setName(e.currentTarget.email.value)
+    setEmail(e.currentTarget.email.value)
   }
 
   function submitPasswordHandler(e) {
-    setName(e.currentTarget.password.value)
+    setPassword(e.currentTarget.password.value)
   }
 
   
