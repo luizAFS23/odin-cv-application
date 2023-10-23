@@ -26,7 +26,7 @@ function GeneralInformationForm(){
 
   function isInformationEntered(email, password){
     if(email != null && password != null){
-      isEntered(true);
+      setIsEntered(true);
     }
   }
 
