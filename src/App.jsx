@@ -15,12 +15,17 @@ function Header(){
   )
 }
 
+const generalInformationSubmit = () =>{
+
+}
+
 function GeneralInformation(){
   return(
     <>
       <h1>Congratulations, you've just stepped foot into an awesome way of getting a job!</h1>
       <h2>First of all, please put on some general information (it will take a few seconds):</h2>
-      <form action="post" name='general-information-form'>
+      
+      <form action="post" onSubmit={generalInformationSubmit}>
         <label htmlFor="name">Enter your name:</label>
         <input type="text" name='name' placeholder='Your name here'/><br/>
 
