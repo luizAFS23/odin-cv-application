@@ -26,7 +26,7 @@ function GeneralInformationForm(){
 
   function isInformationEntered(email, password){
     if(email != null && password != null){
-      isEntered = true;
+      isEntered(true);
     }
   }
 
@@ -38,7 +38,7 @@ function GeneralInformationForm(){
 
 function App() {
   const [isEntered, setIsEntered] = useState(false);
-  
+
   return (
     <>
       <Header/>
