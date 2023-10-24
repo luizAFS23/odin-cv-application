@@ -5,22 +5,12 @@ import './App.css'
 import Header from './components/Header'
 import EmailTaker from './components/EmailTaker'
 import PasswordTaker from './components/PasswordTaker'
+import NextStep from './components/NextStep'
 
 
 function GeneralInformationForm(){
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState(null);
-  const [isEmailEntered, setIsEmailEntered] = useState(false);
-
-  if (email.length == 0) {
-    return <EmailTaker onSubmit={submitEmailHandler} />
-  }
-
-  function EmailEntered(email){
-    if(email.length > 0){
-      setIsEmailEntered(true);
-    }
-  }
+  const [password, setPassword] = useState("");
 
 
   function submitEmailHandler(e) {
@@ -33,64 +23,23 @@ function GeneralInformationForm(){
 
   return(
     <>
-      {isEmailEntered ? (
+      {email.length > 0 ?
         <PasswordTaker onSubmit={submitPasswordHandler} />
-      ) : (
+      : 
         <EmailTaker onSubmit={submitEmailHandler} />
-      )}
+      }
+      {password.length > 0 && <NextStep/>}
     </>
   )
 }
 
-function EmailForm(){
-  const [email, setEmail] = useState("");
-  const [isEmailEntered, setIsEmailEntered] = useState(false);
-
-  if (email.length == 0) {
-    return <EmailTaker onSubmit={submitEmailHandler} />
-  }
-
-  useEffect((email) => {
-    if(email.length > 0){
-      setIsEmailEntered(true);
-    }
-  })
-
-  function submitEmailHandler(e) {
-    setEmail(e.currentTarget.email.value)
-  }
-
-}
-
-function PasswordForm(){
-  const [password, setPassword] = useState(null);
-  const [isPasswordEntered, setIsPasswordEntered] = useState(false);
-
-  if (password.length == 0) {
-    return <PasswordTaker onSubmit={submitPasswordHandler} />
-  }
-
-  useEffect((password) => {
-    if(password.length > 0){
-      setIsPasswordEntered(true);
-    }
-  })
-
-  function submitPasswordHandler(e) {
-    setPassword(e.currentTarget.password.value)
-  }
-}
 
 function App() {
 
   return (
     <>
       <Header/>
-      {isEmailEntered ? (
-        <PasswordForm onSubmit={submitPasswordHandler}/>
-      ) : (
-        <EmailForm onSubmit={submitEmailHandler} />
-      )}
+      <GeneralInformationForm/>
     </>
   )
 }
