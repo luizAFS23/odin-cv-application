@@ -50,11 +50,16 @@ function EmailForm(){
     return <EmailTaker onSubmit={submitEmailHandler} />
   }
 
-  function EmailEntered(email){
+  useEffect((email) => {
     if(email.length > 0){
       setIsEmailEntered(true);
     }
+  })
+
+  function submitEmailHandler(e) {
+    setEmail(e.currentTarget.email.value)
   }
+
 }
 
 function PasswordForm(){
