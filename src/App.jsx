@@ -65,7 +65,7 @@ function PasswordForm(){
     return <PasswordTaker onSubmit={submitPasswordHandler} />
   }
 
-  function PasswordEntered(email){
+  async function PasswordEntered(email){
     if(password.length > 0){
       setIsPasswordEntered(true);
     }
