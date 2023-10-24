@@ -59,7 +59,7 @@ function EmailForm(){
 
 function PasswordForm(){
   const [password, setPassword] = useState(null);
-  const [isEmailEntered, setIsPasswordEntered] = useState(false);
+  const [isPasswordEntered, setIsPasswordEntered] = useState(false);
 
   if (password.length == 0) {
     return <PasswordTaker onSubmit={submitPasswordHandler} />
@@ -72,7 +72,7 @@ function PasswordForm(){
   }
 
   function submitPasswordHandler(e) {
-    setEmail(e.currentTarget.password.value)
+    setPassword(e.currentTarget.password.value)
   }
 }
 
