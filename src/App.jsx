@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -65,11 +65,11 @@ function PasswordForm(){
     return <PasswordTaker onSubmit={submitPasswordHandler} />
   }
 
-  async function PasswordEntered(email){
+  useEffect((password) => {
     if(password.length > 0){
       setIsPasswordEntered(true);
     }
-  }
+  })
 
   function submitPasswordHandler(e) {
     setPassword(e.currentTarget.password.value)
