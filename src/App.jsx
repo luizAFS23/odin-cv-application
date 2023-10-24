@@ -42,12 +42,50 @@ function GeneralInformationForm(){
   )
 }
 
+function EmailForm(){
+  const [email, setEmail] = useState("");
+  const [isEmailEntered, setIsEmailEntered] = useState(false);
+
+  if (email.length == 0) {
+    return <EmailTaker onSubmit={submitEmailHandler} />
+  }
+
+  function EmailEntered(email){
+    if(email.length > 0){
+      setIsEmailEntered(true);
+    }
+  }
+}
+
+function PasswordForm(){
+  const [password, setPassword] = useState(null);
+  const [isEmailEntered, setIsPasswordEntered] = useState(false);
+
+  if (password.length == 0) {
+    return <PasswordTaker onSubmit={submitPasswordHandler} />
+  }
+
+  function PasswordEntered(email){
+    if(password.length > 0){
+      setIsPasswordEntered(true);
+    }
+  }
+
+  function submitPasswordHandler(e) {
+    setEmail(e.currentTarget.password.value)
+  }
+}
+
 function App() {
 
   return (
     <>
       <Header/>
-      <GeneralInformationForm/>
+      {isEmailEntered ? (
+        <PasswordForm onSubmit={submitPasswordHandler}/>
+      ) : (
+        <EmailForm onSubmit={submitEmailHandler} />
+      )}
     </>
   )
 }
