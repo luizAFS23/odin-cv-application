@@ -22,9 +22,9 @@ function GeneralInformationForm(){
   return(
     <>
       {email.length > 0 ?
-        <PasswordTaker onSubmit={submitPasswordHandler} />
+        <PasswordTaker onSubmit={submitPasswordHandler} value={password}/>
       : 
-        <EmailTaker onSubmit={submitEmailHandler} />
+        <EmailTaker onSubmit={submitEmailHandler} value={email}/>
       }
       {password.length > 0 && <NextStep/>}
     </>

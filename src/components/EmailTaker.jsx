@@ -5,7 +5,7 @@ export default function EmailTaker(props) {
         <form onSubmit={props.onSubmit}>
           <label>
             Email:
-            <input type='email' name='email' />
+            <input type='email' name='email' value={props.value} />
           </label>
           <button type='submit'>Submit</button>
         </form>
