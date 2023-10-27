@@ -1,5 +1,5 @@
-import EmailTaker from './components/EmailTaker'
-import PasswordTaker from './components/PasswordTaker'
+import EmailTaker from './EmailTaker'
+import PasswordTaker from './PasswordTaker'
 
 export default function GeneralInformationForm(){
     const [email, setEmail] = useState("");
