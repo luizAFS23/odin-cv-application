@@ -1,8 +1,10 @@
 import EmailTaker from './EmailTaker.jsx'
 import PasswordTaker from './PasswordTaker.jsx'
 import { useState } from 'react'
+import EducationalExperienceForm from './EducationalExperienceForm.jsx';
 
-export default function GeneralInformationForm(){
+
+export default function LoginInformationForm(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
   
@@ -16,7 +18,13 @@ export default function GeneralInformationForm(){
       e.preventDefault();
       setPassword(e.currentTarget.password.value)
     }
-  
+
+    if(email.length != 0 && password.length != 0){
+        return(
+            <EducationalExperienceForm/>
+        )
+    }
+
     return(
       <>
         {email.length > 0 ? (
@@ -25,7 +33,8 @@ export default function GeneralInformationForm(){
         : 
           (<EmailTaker onSubmit={submitEmailHandler} value={email}/>)
         }
-        
       </>
     )
+    
   }
+
