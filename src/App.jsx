@@ -46,9 +46,9 @@ function GeneralInformationForm(){
 
 function NextStep(){
   return(
-    <>
+    <div>
       
-    </>
+    </div>
   )
 }
 
