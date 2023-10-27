@@ -1,7 +1,7 @@
+import { password, email } from '../App/GeneralInformationForm'
+
 export default function NextStep(){
-    return(
-        <>
-            <h1>Thank you for the information! Wait just a moment while we wrap things up...</h1>
-        </>
-    )
+    if(password.length > 0 && email.length > 0){
+        return (<div>Next Step!</div>)
+    }
 }
