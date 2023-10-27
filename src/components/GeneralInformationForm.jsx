@@ -1,5 +1,5 @@
-import EmailTaker from './EmailTaker'
-import PasswordTaker from './PasswordTaker'
+import EmailTaker from './EmailTaker.jsx'
+import PasswordTaker from './PasswordTaker.jsx'
 import { useState } from 'react'
 
 export default function GeneralInformationForm(){
