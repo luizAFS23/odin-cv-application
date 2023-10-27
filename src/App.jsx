@@ -12,25 +12,45 @@ function GeneralInformationForm(){
 
 
   function submitEmailHandler(e) {
+    e.preventDefault();
     setEmail(e.currentTarget.email.value)
   }
 
   function submitPasswordHandler(e) {
+    e.preventDefault();
     setPassword(e.currentTarget.password.value)
+  }
+
+  function ReturnPassword(){
+    if(password.length < 5){
+      return(<div>Ypur password needs to be 5 or more characters long.</div>)
+    }
+
+    if(password.length >= 5){
+      return(<NextStep/>);
+    }
   }
 
   return(
     <>
-      {email.length > 0 ?
+      {email.length > 0 ? (
         <PasswordTaker onSubmit={submitPasswordHandler} value={password}/>
+      )
       : 
-        <EmailTaker onSubmit={submitEmailHandler} value={email}/>
+        (<EmailTaker onSubmit={submitEmailHandler} value={email}/>)
       }
-      {password.length > 0 && <NextStep/>}
+      
     </>
   )
 }
 
+function NextStep(){
+  return(
+    <>
+      
+    </>
+  )
+}
 
 function App() {
 
