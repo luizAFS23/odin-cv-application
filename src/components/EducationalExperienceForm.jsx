@@ -1,8 +1,13 @@
 import { useState } from "react"
+import ProfessionalExperienceForm from "./ProfessionalExperienceForm";
 
 export default function EducationalExperienceForm(props){
     const [name, setName] = useState('');
     const [schoolName, setSchoolName] = useState('');
+
+    if(name.length != 0 && schoolName.length != 0){
+        return <ProfessionalExperienceForm/>
+    }
 
     return(
         <div>
