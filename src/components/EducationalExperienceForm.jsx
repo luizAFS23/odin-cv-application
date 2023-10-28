@@ -16,7 +16,7 @@ function FormDetails(props) {
   }
 
 
-export default function EducationalExperienceForm(props){
+export default function EducationalExperienceForm(){
     const [form, setForm] = useState({nameinput: "", schoolnameinput: ""})
 
     const SubmitHandler = (e) => {
