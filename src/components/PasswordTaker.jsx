@@ -5,7 +5,7 @@ export default function PasswordTaker(props) {
         <form onSubmit={props.onSubmit}>
           <label>
             Password:
-            <input type='password' name='password'/>
+            <input type='password' name='password' minLength={5}/>
           </label>
           <button type='submit'>Submit</button>
         </form>
