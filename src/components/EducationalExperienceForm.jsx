@@ -12,11 +12,11 @@ function FormDetails(props) {
           value={props.form.nameinput}
           onChange={props.handleChange}
         />
-        <h3>School graduated from:</h3>
+        <h3>Education:</h3>
         <input
           type="text"
-          name="schoolnameinput"
-          value={props.form.schoolnameinput}
+          name="educationinput"
+          value={props.form.educationinput}
           onChange={props.handleChange}
         /><br/><br />
         <button type="submit">Submit</button>
@@ -26,32 +26,33 @@ function FormDetails(props) {
 }
 
 export default function EducationalExperienceForm(props) {
-  const [form, setForm] = useState({ nameinput: "", schoolnameinput: "" });
-  const [showConfirm, setShowConfirm] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm((prevForm) => ({
-      ...prevForm,
-      [name]: value,
-    }));
-  };
+    const [form, setForm] = useState({ nameinput: "", educationinput: "" });
+    const [showConfirm, setShowConfirm] = useState(false);
 
-  const SubmitHandler = (e) => {
-    e.preventDefault();
-    if (form.nameinput !== "" && form.schoolnameinput !== "") {
-      setShowConfirm(true);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm((prevForm) => ({
+        ...prevForm,
+        [name]: value,
+        }));
+    };
+
+    const SubmitHandler = (e) => {
+        e.preventDefault();
+        if (form.nameinput !== "" && form.educationinput !== "") {
+        setShowConfirm(true);
+        }
+    };
+
+    if (showConfirm) {
+        return <ConfirmInformation nameinformation={form.nameinput} educationinformation={form.educationinput}/>;
     }
-  };
 
-  if (showConfirm) {
-    return <ConfirmInformation />;
-  }
-
-  return (
-    <div>
-      <h1>Perfect! Now, Please give more details about you:</h1>
-      <FormDetails form={form} SubmitHandler={SubmitHandler} handleChange={handleChange} />
-    </div>
-  );
+    return (
+        <div>
+        <h1>Perfect! Now, Please give more details about you:</h1>
+        <FormDetails form={form} SubmitHandler={SubmitHandler} handleChange={handleChange} />
+        </div>
+    );
 }
