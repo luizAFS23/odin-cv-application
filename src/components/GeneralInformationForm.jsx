@@ -21,7 +21,7 @@ export default function LoginInformationForm(props){
 
     if(email.length != 0 && password.length != 0){
         return(
-            <EducationalExperienceForm/>
+            <EducationalExperienceForm email={email} password={password}/>
         )
     }
 

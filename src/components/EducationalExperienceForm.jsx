@@ -25,7 +25,7 @@ function FormDetails(props) {
   );
 }
 
-export default function EducationalExperienceForm(props) {
+export default function EducationalExperienceForm({email, password}) {
 
     const [form, setForm] = useState({ nameinput: "", educationinput: "" });
     const [showConfirm, setShowConfirm] = useState(false);
@@ -46,7 +46,7 @@ export default function EducationalExperienceForm(props) {
     };
 
     if (showConfirm) {
-        return <ConfirmInformation nameinformation={form.nameinput} educationinformation={form.educationinput}/>;
+        return <ConfirmInformation emailinformation={email} passwordinformation={password} nameinformation={form.nameinput} educationinformation={form.educationinput}/>;
     }
 
     return (
