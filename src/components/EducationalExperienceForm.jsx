@@ -39,7 +39,6 @@ export default function EducationalExperienceForm(props) {
 
   const SubmitHandler = (e) => {
     e.preventDefault();
-
     if (form.nameinput !== "" && form.schoolnameinput !== "") {
       setShowConfirm(true);
     }
