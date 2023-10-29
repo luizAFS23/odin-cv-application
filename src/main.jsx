@@ -5,6 +5,6 @@ import EducationalExperienceForm from './components/EducationalExperienceForm.js
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <EducationalExperienceForm />
   </React.StrictMode>,
 )

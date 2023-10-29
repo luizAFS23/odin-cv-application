@@ -5,6 +5,7 @@ function FormDetails(props) {
     return (
       <div>
         <form onSubmit={props.SubmitHandler}>
+            <h1>Perfect! Now, Please give more details about you:</h1>
             <h3>Full Name: </h3>
             <input type="text" name="nameinput"/>
             <h3>School graduated from:</h3>
@@ -24,14 +25,13 @@ export default function EducationalExperienceForm(){
         setForm({ [e.target.name]: e.target.value });
     };
 
-    if(form.nameinput !== "" && form.schoolnameinput !== ""){
-        return(<ConfirmInformation/>);
-    }
-
     return(
         <div>
-            <h1>Perfect! Now, Please give more details about you:</h1>
-            <FormDetails SubmitHandler={SubmitHandler}/>
+            {form.nameinput !== "" && form.schoolnameinput !== "" 
+            ? 
+            (<ConfirmInformation/>) 
+            : 
+            (<FormDetails SubmitHandler={SubmitHandler}/>)}
         </div>
     )
 }
