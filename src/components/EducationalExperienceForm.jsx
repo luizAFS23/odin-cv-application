@@ -25,9 +25,13 @@ export default function EducationalExperienceForm(){
         setForm({ [e.target.name]: e.target.value });
     };
 
+    if(form.nameinput !== "" && form.schoolnameinput !== ""){
+        return(<ConfirmInformation/>)
+    }
+
     return(
         <div>
-            {form.nameinput !== "" && form.schoolnameinput !== "" 
+            {form.nameinput.length > 0 && form.schoolnameinput.length > 0 
             ? 
             (<ConfirmInformation/>) 
             : 
