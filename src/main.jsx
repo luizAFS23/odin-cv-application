@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import EducationalExperienceForm from './components/EducationalExperienceForm.jsx'
+import ConfirmInformation from './components/ConfirmInformation.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <EducationalExperienceForm />
+    <ConfirmInformation />
   </React.StrictMode>,
 )
