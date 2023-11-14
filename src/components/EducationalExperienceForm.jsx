@@ -25,7 +25,6 @@ function FormDetails(props) {
   );
 }
 
-
 export default function EducationalExperienceForm({email, password}) {
 
     const [form, setForm] = useState({ nameinput: "", educationinput: "" });
