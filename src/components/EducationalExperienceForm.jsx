@@ -56,5 +56,3 @@ export default function EducationalExperienceForm({email, password}) {
         </div>
     );
 }
-
-
